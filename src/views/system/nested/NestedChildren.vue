@@ -9,6 +9,10 @@
 
     <pro-form-modal :width="'60%'" ref="proForm" :modal-config="modalConfig" v-model="formData" ></pro-form-modal>
     <el-button @click="showForm">显示</el-button>
+    <el-button @click="openTimeout1">打开定时</el-button>
+    <el-button @click="closeTimeout1">关闭定时</el-button>
+    <el-button @click="openLock">开启锁屏</el-button>
+    <lock ref="lockRef"></lock>
 <!--    <div>-->
 <!--      枚举名称-->
 <!--      <el-input placeholder="请输入枚举名称" v-model="enumName"></el-input>-->
@@ -38,12 +42,13 @@
 <script>
 import { IconSelector } from '@/components/icons'
 import ProFormModal from '@/components/form/src/ProFormModal'
-
+import {openTimeOut,closeTimeout} from '@/utils/astrict'
+import Lock from '@/components/LockSetting'
 import GenderEnum from '@/constants/enums/system/GenderEnum'
 export default {
   name: 'NestedChildren',
   components: {
-    IconSelector,ProFormModal
+    IconSelector,ProFormModal,Lock
   },
   data() {
     return {
@@ -177,6 +182,17 @@ export default {
     }
   },
   methods: {
+    openTimeout1(){
+      console.log("开启了")
+      openTimeOut()
+    },
+    openLock(){
+      this.$refs.lockRef.handleLock()
+    },
+    closeTimeout1(){
+      console.log("关闭了")
+      closeTimeout()
+    },
     showForm(){
       this.$refs.proForm.add({title:"显示"})
     },
