@@ -5,38 +5,46 @@ export const modalAuthConfig= {
   colLayout:{
     span: 24
   },
-  formProps:{
+  nativeFormProps:{
     'label-width': '80px'
   },
-  formItems:[
+  rows:[
     {
-      type:'text',
-      label: '用户id',
-      field:'userId',
-      isHidden: true
-    },
-    {
-      type:'text',
-      label: '用户名',
-      field:'username',
-      config:{
-        disabled: true
-      }
-    },
-    {
-      type:'select',
-      label: '角色',
-      field:'roleCodes',
-      placeholder:'请选择角色',
-      config:{
+      cols:[
+        {
+          formItems:[
+            {
+              type:'text',
+              label: '用户id',
+              field:'userId',
+              isHidden: true
+            },
+            {
+              type:'text',
+              label: '用户名',
+              field:'username',
+              config:{
+                disabled: true
+              }
+            },
+            {
+              type:'select',
+              label: '角色',
+              field:'roleCodes',
+              placeholder:'请选择角色',
+              config:{
 
-        remoteLoad: true,
-        request: getRoleSelectData,
-        otherProps:{
-          multiple: true,
+                remoteLoad: true,
+                request: getRoleSelectData,
+                nativeProps:{
+                  multiple: true,
+                }
+              }
+            },
+          ]
         }
-      }
-    },
-
+      ]
+    }
   ],
+
 }

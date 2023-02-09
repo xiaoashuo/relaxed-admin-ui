@@ -88,17 +88,20 @@
       :req-function="reqFunc"
       @submitSuccess="refreshTable"
     />
-    <user-auth-modal-form ref="userAuthModalForm" @submitSuccess="refreshTable" />
 
+    <yi-form-modal ref="userAuthModalForm" :modal-config="modalAuthConfig"
+    :req-function="userAuthReqFunc"
+    @submitSuccess="refreshTable"
+    ></yi-form-modal>
   </div>
 </template>
 
 <script>
 import { contentTableConfig } from './config/content.config'
 import { searchFormConfig } from './config/search.config'
+import { modalAuthConfig } from './config/modal.auth.config'
+import { getUserRoleIds ,putUserRoleIds} from '@/api/role'
 
-import { getUserRoleIds } from '@/api/role'
-import UserAuthModalForm from '@/views/system/user/UserAuthModalForm'
 import UserModalForm from '@/views/system/user/UserModalForm'
 import yiImage from '@/components/image'
 
@@ -112,12 +115,13 @@ export default {
   name: 'List',
   components: {
 
-    UserAuthModalForm, UserModalForm, yiImage
+     UserModalForm, yiImage
   },
   data() {
     return {
       contentTableConfig: contentTableConfig,
       searchFormConfig: searchFormConfig,
+      modalAuthConfig:modalAuthConfig,
       showSearch: true,
       organizationId: null,
       tableRequest: getPageListData,
@@ -132,7 +136,11 @@ export default {
       reqFunc: {
         create: addObj,
         update: putObj
-      }
+      },
+      userAuthReqFunc: {
+        update: this.handAuthConfirmClick
+      },
+
     }
   },
   watch: {
@@ -169,6 +177,12 @@ export default {
         const info = { ...item, roleCodes: res.data.roleCodes }
         this.$refs.userAuthModalForm.update({ title: '授权角色', item: info })
       })
+    },
+
+    handAuthConfirmClick(reqData) {
+      console.log("当前表单数据",reqData)
+      const roleCodes = reqData.roleCodes
+      return putUserRoleIds(reqData.userId, { roleCodes })
     },
     // 表格相关
     beforeSearchTable(formData, isResetPage) {
