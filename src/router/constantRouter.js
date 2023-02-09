@@ -33,15 +33,24 @@ export const constantRoutes = [
   //   component: () => import('@/views/login/index'),
   //   hidden: 1
   // },
-  {
-    path: '/pdf',
-    component: () => import('@/components/pdf/pdf'),
-    hidden: 1
-  },
+
   {
     path: '/404',
     component: () => import('@/views/error/404'),
     hidden: 1
+  },
+  // 锁屏
+  {
+    path: '/uploadComponent',
+    hidden: true,
+    name: 'uploadComponent',
+    component: () => import('@/views/system/component/UploadComponent.vue')
+  },
+  {
+    path: '/formComponent',
+    hidden: true,
+    name: 'formComponent',
+    component: () => import('@/views/system/component/FormComponent.vue')
   },
   // // 404 page must be placed at the end !!!
   // { path: '*', redirect: '/404', hidden: true }

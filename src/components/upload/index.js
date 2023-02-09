@@ -1,5 +1,5 @@
-import upload from '@/components/upload/src/upload'
-import UploadModal from '@/components/upload/src/UploadModal'
+import YiUpload from '@/components/upload/src/YiUpload.vue'
+import YiUploadModal from '@/components/upload/src/UploadModal'
 export {
-  upload,UploadModal
+  YiUpload,YiUploadModal
 }
