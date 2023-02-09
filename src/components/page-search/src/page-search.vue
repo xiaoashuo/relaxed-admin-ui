@@ -48,12 +48,19 @@
       methods:{
           //初始化表单项
           initFormData(){
-            const formItems=this.searchFormConfig?.formItems??[]
-            for (const item of formItems){
-              this.formData[item.field]=''
+            const rows= this.searchFormConfig?.rows
+            for (const row of rows){
+              const cols=row.cols
+              for (const col of cols){
+               const formItems= col.formItems
+                for (const item of formItems){
+                  this.formData[item.field]=''
+                }
+              }
             }
           },
         handleResetClick(){
+
           this.initFormData()
           this.$emit('resetBtnClick')
         },
