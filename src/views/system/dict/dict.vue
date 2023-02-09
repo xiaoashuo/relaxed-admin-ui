@@ -17,11 +17,11 @@
       </pro-table>
 
       <!--模态表单组件-->
-      <form-modal ref="formModal" :modal-config="modalConfig"
+      <yi-form-modal ref="formModal" :modal-config="modalConfig"
                   :req-function="reqFunction"
                   @submitSuccess="handleSubmit"
       >
-      </form-modal>
+      </yi-form-modal>
       <dict-item  ref="dictItemPage" ></dict-item>
 
 

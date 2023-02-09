@@ -15,7 +15,7 @@
   import {listToTree} from "@/utils/treeUtil";
   // import the styles
   import '@riophae/vue-treeselect/dist/vue-treeselect.css'
-  import {modalConfig} from "@/views/system/menu/config/modal.config";
+
     export default {
         name: "tree-select",
         components:{

@@ -1,7 +1,5 @@
 import PageSearch from '@/components/page-search'
 import ProTable from "@/components/table/src/ProTable";
-import FormModal from "@/components/form/src/FormModal";
-import ProFormModal from '@/components/form/src/ProFormModal'
 import YiForm from '@/components/form/src/YiForm.vue'
 import YiFormModal from '@/components/form/src/YiFormModal.vue'
 import {DictRadioGroup,DictSelect,DictCheckBoxGroup,DictText,DictTag} from "@/components/dict";
@@ -13,8 +11,7 @@ export function registerComponents(Vue) {
   Vue.component('DictText',DictText)
   Vue.component('DictTag',DictTag)
 
-  Vue.component('FormModal',FormModal)
-  Vue.component('ProFormModal',ProFormModal)
+  Vue.component('YiForm',YiForm)
   Vue.component('YiFormModal',YiFormModal)
   Vue.component('ProTable',ProTable)
 

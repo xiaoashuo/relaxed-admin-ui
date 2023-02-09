@@ -22,11 +22,11 @@
         </pro-table>
 
         <!--模态表单组件-->
-        <form-modal :append-to-body="true" ref="formModal" :modal-config="modalConfig"
+        <yi-form-modal :append-to-body="true" ref="formModal" :modal-config="modalConfig"
                     :req-function="reqFunction"
                     @submitSuccess="handleSubmit"
         >
-        </form-modal>
+        </yi-form-modal>
 
       </el-dialog>
 

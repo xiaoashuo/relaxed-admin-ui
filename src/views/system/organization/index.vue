@@ -37,7 +37,7 @@
       </template>
     </pro-table>
     <!--模态表单组件-->
-    <form-modal
+    <yi-form-modal
       ref="formModal"
       :modal-config="modalConfig"
       :req-function="reqFunction"

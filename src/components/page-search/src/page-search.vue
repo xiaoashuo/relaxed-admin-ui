@@ -17,12 +17,11 @@
 </template>
 
 <script>
-    import YiForm from '@/components/form'
+
+
     export default {
         name: "page-search",
-      components:{
-        YiForm
-      },
+
         props:{
           searchFormConfig:{
             type:Object,

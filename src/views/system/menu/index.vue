@@ -71,7 +71,6 @@ import MenuModalForm from '@/views/system/menu/MenuModalForm'
 import { BackToTop } from '@/components/BackToTop'
 import { contentTableConfig } from './config/content.config'
 import { searchFormConfig } from './config/search.config'
-import { modalConfig } from './config/modal.config'
 
 import { getGrantList, saveMenu, getPageListData, delMenu } from '@/api/menu'
 
@@ -81,14 +80,12 @@ export default {
   created() {
     this.contentTableConfig = contentTableConfig
     this.searchFormConfig = searchFormConfig
-    this.modalConfig = modalConfig
     this.loadTreeSelectData()
   },
   data() {
     return {
       contentTableConfig: {},
       searchFormConfig: {},
-      modalConfig: {},
       tableRequest: getPageListData,
       treeSelectData: [],
       myBackToTopStyle: {
