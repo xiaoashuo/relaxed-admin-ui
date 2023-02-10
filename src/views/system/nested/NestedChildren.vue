@@ -48,7 +48,7 @@ import GenderEnum from '@/constants/enums/system/GenderEnum'
 export default {
   name: 'NestedChildren',
   components: {
-    IconSelector,ProFormModal,Lock
+    IconSelector,Lock
   },
   data() {
     return {

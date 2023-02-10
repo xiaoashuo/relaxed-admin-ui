@@ -1,6 +1,6 @@
 <template>
 
-      <yi-form v-bind="searchFormConfig"  v-model="formData">
+      <yi-form  v-bind="searchFormConfig"  v-model="formData">
         <template  #header >
           <slot name="header">
             <h1 class="header-title">高级检索</h1>

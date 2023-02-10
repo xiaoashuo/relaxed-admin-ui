@@ -1,18 +1,32 @@
 export const searchFormConfig = {
 
   showHeader:true,
-  formItems: [
+  showFooter: true,
+  rows:[
     {
-      type: 'text',
-      label: '标识',
-      field: 'code',
-      placeholder: '请输入标识'
-    },
-    {
-      type: 'text',
-      label: '标题',
-      field: 'title',
-      placeholder: '请输入标题'
+      cols:[
+        {
+          formItems: [
+            {
+              type: 'text',
+              label: '标识',
+              field: 'code',
+              placeholder: '请输入标识'
+            },
+          ]
+        },
+        {
+          formItems: [
+            {
+              type: 'text',
+              label: '标题',
+              field: 'title',
+              placeholder: '请输入标题'
+            }
+          ]
+        }
+      ]
     }
   ]
+
 }
