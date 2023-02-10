@@ -155,7 +155,7 @@ export default {
      * 处理新建按钮
      */
     handleNewClick() {
-      this.$emit('newBtnClick')
+      this.$emit('addBtnClick')
     },
     /**
      * 处理编辑按钮
