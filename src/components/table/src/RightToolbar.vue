@@ -1,8 +1,9 @@
 <template>
-  <div class="top-right-btn">
+  <div class="top-right-btn"   >
     <el-row>
-
-
+      <el-tooltip class="item" effect="dark" content="全屏" placement="top">
+        <el-button size="mini" circle :icon="localFullScreen?'el-icon-aim':'el-icon-full-screen'" @click="handleFullScreen" />
+      </el-tooltip>
       <el-tooltip class="item" effect="dark" content="刷新" placement="top">
         <el-button size="mini" circle icon="el-icon-refresh" @click="refresh()" />
       </el-tooltip>
@@ -24,12 +25,13 @@
 </template>
 
 <script>
-
+import screenfullMixin from "@/mixins/screenfullMixin";
     export default {
         name: "RightTools",
       components:{
 
       },
+      mixins:[screenfullMixin],
         props:{
           columns: {
             type: Array,
@@ -65,6 +67,6 @@
     }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 
 </style>

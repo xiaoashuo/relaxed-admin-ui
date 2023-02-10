@@ -52,6 +52,12 @@ export const constantRoutes = [
     name: 'formComponent',
     component: () => import('@/views/system/component/FormComponent.vue')
   },
+  {
+    path: '/tableComponent',
+    hidden: true,
+    name: 'tableComponent',
+    component: () => import('@/views/system/component/TableComponent.vue')
+  },
   // // 404 page must be placed at the end !!!
   // { path: '*', redirect: '/404', hidden: true }
 ]
