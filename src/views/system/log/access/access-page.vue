@@ -8,6 +8,7 @@
     ></page-search>
     <!--表格组件-->
     <yi-pro-table  ref="pageContentRef"
+
                    :content-table-config="contentTableConfig"
                    :request="tableRequest">
       <template #expandHandle="scope">

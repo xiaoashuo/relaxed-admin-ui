@@ -1,14 +1,15 @@
 export const contentTableConfig={
   title: '访问日志',
   showSelectColumn:false,
-  headerProps:{
-    visible: true,
-    leftVisible: true,
-    rightVisible: false
+
+  permissions:{
+    create:'sys:accesslog:create'
   },
+
   propList:[
 
     {
+
       label:'',
       minWidth: 180,
       type: "expand",

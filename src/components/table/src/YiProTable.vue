@@ -37,22 +37,22 @@
             <el-tooltip class="item" effect="dark" content="刷新" placement="top">
               <el-button size="mini" circle icon="el-icon-refresh" @click="refresh()" />
             </el-tooltip>
-            <el-tooltip class="item" effect="dark" content="显隐列" placement="top" v-if="propList">
+            <el-tooltip class="item" effect="dark" content="显隐列" placement="top" v-if="transferPropList">
               <el-button size="mini" circle icon="el-icon-menu" @click="showColumn()" />
             </el-tooltip>
           </el-row>
+          <el-dialog
+            :title="title"
+            :visible.sync="open"
+            append-to-body
+          >
 
+            <el-transfer v-model="value" :props="{key:'prop',lable:'label'}" :titles="['显示','隐藏']" :data="transferPropList" @change="handleDataChange"></el-transfer>
+
+
+          </el-dialog>
         </div>
-        <el-dialog
-          :title="title"
-          :visible.sync="open"
-          append-to-body
-        >
 
-          <el-transfer v-model="value" :props="{key:'prop',lable:'label'}" :titles="['显示','隐藏']" :data="propList" @change="handleDataChange"></el-transfer>
-
-
-        </el-dialog>
       </slot>
     </template>
 
@@ -93,16 +93,14 @@
 
 <script>
 import YiTable from "./YiTable.vue"
-import RightToolbar from "@/components/table/src/RightToolbar";
 import screenfullMixin from "@/mixins/screenfullMixin";
 import {ProTableMixin} from "@/mixins";
-import {usePermission} from "@/utils/usePermission";
 
 export default {
   name: "YiProTable",
   components:{
     YiTable,
-    RightToolbar,
+
   },
 
   mixins:[ProTableMixin,screenfullMixin],
@@ -117,8 +115,9 @@ export default {
       })
       return otherPropSlots;
     },
-    propList(){
-      return this.contentTableConfig.propList
+    transferPropList(){
+      let filter = this.contentTableConfig?.propList.filter(item=>item.prop)
+      return filter
     }
   },
   data(){
@@ -135,7 +134,7 @@ export default {
   methods:{
     // 右侧列表元素变化
     handleDataChange(data) {
-      this.propList.forEach(column=>{
+      this.transferPropList.forEach(column=>{
         let result = data.some(ele => ele === column.prop)
         this.$set(column,'hidden',result)
       })

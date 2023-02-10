@@ -8,6 +8,7 @@ export const contentTableConfig = {
   },
   propList: [
     {
+
       label: '',
       minWidth: 180,
       type: 'expand',
