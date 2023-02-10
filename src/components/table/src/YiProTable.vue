@@ -28,6 +28,7 @@
                        size="small" @click="handleNewClick" style="margin-right: 12px">
               新建
             </el-button>
+            <slot name="extUserTools"></slot>
           </slot>
           <el-row class="rightTools">
             <el-tooltip class="item" effect="dark" content="全屏" placement="top">

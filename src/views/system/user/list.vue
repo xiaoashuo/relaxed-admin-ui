@@ -34,16 +34,14 @@
           @queryBtnClick="handleSearchClick"
         />
         <!--表格组件-->
-        <pro-table
-          ref="pageContentRef"
-          multi-sort
-          :content-table-config="contentTableConfig"
-          :request="tableRequest"
-          :before-search-table="beforeSearchTable"
-          @newBtnClick="showNewModal"
-          @editBtnClick="showEditModal"
-          @delBtnClick="handleDelClick"
-        >
+        <yi-pro-table   ref="pageContentRef"
+                        multi-sort
+                        :content-table-config="contentTableConfig"
+                        :request="tableRequest"
+                        :before-search-table="beforeSearchTable"
+                        @addBtnClick="showNewModal"
+                        @editBtnClick="showEditModal"
+                        @delBtnClick="handleDelClick">
           <template #extOption>
 
             <el-button
@@ -79,7 +77,8 @@
             </el-button>
 
           </template>
-        </pro-table>
+        </yi-pro-table>
+
       </el-col>
 
     </el-row>

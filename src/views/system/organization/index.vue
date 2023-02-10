@@ -9,15 +9,13 @@
       @queryBtnClick="handleSearchClick"
     />
     <!--表格组件-->
-    <pro-table
-      ref="pageContentRef"
-      :content-table-config="contentTableConfig"
-      :request="tableRequest"
-      @newBtnClick="showNewModal({sort:0})"
-      @editBtnClick="showEditModal"
-      @delBtnClick="handleDelClick"
-    >
-      <template #extOption>
+    <yi-pro-table ref="pageContentRef"
+                  :content-table-config="contentTableConfig"
+                  :request="tableRequest"
+                  @addBtnClick="showNewModal({sort:0})"
+                  @editBtnClick="showEditModal"
+                  @delBtnClick="handleDelClick">
+      <template #extUserTools>
         <div>
           <el-button type="info"  plain icon="el-icon-sort"
                      size="small" @click="toggleExpandAll" style="margin-right: 12px">
@@ -35,7 +33,9 @@
         >新增
         </el-button>
       </template>
-    </pro-table>
+    </yi-pro-table>
+
+
     <!--模态表单组件-->
     <yi-form-modal
       ref="formModal"

@@ -3,10 +3,7 @@
       <page-search ref="pageSearchRef" :searchFormConfig="searchFormConfig"
                    @resetBtnClick="handleResetClick" @queryBtnClick="handleSearchClick"></page-search>
       <!--表格组件-->
-      <pro-table ref="pageContentRef" :content-table-config="contentTableConfig" :request="tableRequest"
-
-
-      >
+      <yi-pro-table ref="pageContentRef" :content-table-config="contentTableConfig" :request="tableRequest">
         <template #expandHandle="scope">
           <div class="reqParam">
             <h2>请求</h2>
@@ -21,7 +18,8 @@
           <el-button plain size="small" :type="scope.row.httpStatus==200?'success':'danger'">{{scope.row.httpStatus==200? '成功': '失败'}}
           </el-button>
         </template>
-      </pro-table>
+      </yi-pro-table>
+
 
 
 

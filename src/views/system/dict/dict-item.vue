@@ -2,13 +2,11 @@
     <div class="dictItem">
       <el-dialog :title="modalTitle" :visible.sync="modalVisible"  >
         <!--表格组件-->
-        <pro-table ref="pageContentRef" :content-table-config="contentTableConfig"
-                   :lazy-load="true"
-                   :request="tableRequest"
-                   @newBtnClick="showNewModal" @editBtnClick="showEditModal"
-                   @delBtnClick="handleDelClick"
-
-        >
+        <yi-pro-table ref="pageContentRef" :content-table-config="contentTableConfig"
+                      :lazy-load="true"
+                      :request="tableRequest"
+                      @addBtnClick="showNewModal" @editBtnClick="showEditModal"
+                      @delBtnClick="handleDelClick">
           <template #extStatus="scope">
             <el-switch
               v-model="scope.row.status"
@@ -19,7 +17,8 @@
               @change="handleStatusChange($event,scope.row.id)">
             </el-switch>
           </template>
-        </pro-table>
+        </yi-pro-table>
+
 
         <!--模态表单组件-->
         <yi-form-modal :append-to-body="true" ref="formModal" :modal-config="modalConfig"

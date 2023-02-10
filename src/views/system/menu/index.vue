@@ -9,15 +9,13 @@
     ></page-search>
     <!--      内容区域-->
     <!--表格组件-->
-    <pro-table
-      ref="pageContentRef"
-      :content-table-config="contentTableConfig"
-      :request="tableRequest"
-      @newBtnClick="showNewModal({ sort: 0 })"
-      @editBtnClick="handleEditModal"
-      @delBtnClick="handleDelData"
-    >
-      <template #extOption>
+    <yi-pro-table  ref="pageContentRef"
+                   :content-table-config="contentTableConfig"
+                   :request="tableRequest"
+                   @addBtnClick="showNewModal({ sort: 0 })"
+                   @editBtnClick="handleEditModal"
+                   @delBtnClick="handleDelData">
+      <template #extUserTools>
         <div>
           <el-button type="info"  plain icon="el-icon-sort"
                      size="small" @click="toggleExpandAll" style="margin-right: 12px">
@@ -38,12 +36,12 @@
             type="text"
             icon="el-icon-plus"
             @click="showNewModal({ parentId: scope.row.id })"
-            >新增
+          >新增
           </el-button>
 
         </div>
       </template>
-    </pro-table>
+    </yi-pro-table>
 
     <menu-modal-form
       ref="formModal"

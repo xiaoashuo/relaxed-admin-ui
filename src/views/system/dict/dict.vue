@@ -3,18 +3,17 @@
       <page-search  ref="pageSearchRef" :searchFormConfig="searchFormConfig"
                     @resetBtnClick="handleResetClick" @queryBtnClick="handleSearchClick"></page-search>
       <!--表格组件-->
-      <pro-table ref="pageContentRef" :content-table-config="contentTableConfig" :request="tableRequest"
-                 @newBtnClick="showNewModal" @editBtnClick="showEditModal"
-                 @delBtnClick="handleDelClick"
-
-      >
+      <yi-pro-table ref="pageContentRef" :content-table-config="contentTableConfig" :request="tableRequest"
+                    @addBtnClick="showNewModal" @editBtnClick="showEditModal"
+                    @delBtnClick="handleDelClick">
         <template #valueType="scope">
           <dict-text dict-code="dict_value_type" :value="scope.row.valueType" ></dict-text>
         </template>
         <template #extHandler="scope">
           <el-button size="small" type="text" @click="handleDictItemClick(scope.row)">字典项</el-button>
         </template>
-      </pro-table>
+      </yi-pro-table>
+
 
       <!--模态表单组件-->
       <yi-form-modal ref="formModal" :modal-config="modalConfig"

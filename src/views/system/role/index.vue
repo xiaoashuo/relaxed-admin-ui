@@ -7,14 +7,12 @@
       @queryBtnClick="handleSearchClick"
     ></page-search>
     <!--表格组件-->
-    <pro-table
-      ref="pageContentRef"
-      :content-table-config="contentTableConfig"
-      :request="tableRequest"
-      @newBtnClick="showNewModal"
-      @editBtnClick="showEditModal"
-      @delBtnClick="handleDelClick"
-    >
+    <yi-pro-table  ref="pageContentRef"
+                   :content-table-config="contentTableConfig"
+                   :request="tableRequest"
+                   @addBtnClick="showNewModal"
+                   @editBtnClick="showEditModal"
+                   @delBtnClick="handleDelClick">
       <template #extHandler="scope">
         <el-dropdown
           size="mini"
@@ -29,7 +27,8 @@
           </el-dropdown-menu>
         </el-dropdown>
       </template>
-    </pro-table>
+    </yi-pro-table>
+
     <!--模态表单组件-->
     <yi-form-modal
       ref="formModal"

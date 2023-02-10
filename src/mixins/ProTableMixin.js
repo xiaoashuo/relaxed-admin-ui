@@ -7,11 +7,11 @@ export default {
   props: {
     showTitle: {
       type: Boolean,
-      default: false
+      default: true
     },
     showTools: {
       type: Boolean,
-      default: false
+      default: true
     },
     //  多列排序
     multiSort: {
