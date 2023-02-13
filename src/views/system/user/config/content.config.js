@@ -13,9 +13,9 @@ export const contentTableConfig = {
 
   },
   permissions: {
-    create: 'system:user:add',
-    update: 'system:user:edit',
-    delete: 'system:user:delete'
+    // create: 'system:user:add',
+    // update: 'system:user:edit',
+    // delete: 'system:user:delete'
   },
   propList: [
     {

@@ -62,9 +62,9 @@
 
           <template #image="scope">
             <yi-image
-              :src="scope.row.avatar"
+              :src="scope.row.previewAvatar"
               :image-style="{width: '40px' ,height:'40px'}"
-              :preview-src-list="[scope.row.avatar]"
+              :preview-src-list="[scope.row.previewAvatar]"
             />
 
           </template>
@@ -196,7 +196,7 @@ export default {
       this.$refs.userModalForm.update({ title: '编辑用户', item: { ...item }})
     },
     handleDelClick(item) {
-      delObj(item.id).then(res => {
+      delObj(item.userId).then(res => {
         this.$refs.pageContentRef.refreshTable(false)
       })
     },
