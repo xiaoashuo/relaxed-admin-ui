@@ -23,7 +23,7 @@
         </div>
         <div class="headerRight" v-if="showTools">
 
-          <slot name="userTools">
+          <slot name="userTools" v-if="showUserTools">
             <el-button type="primary" v-if="hasPermission('create')" plain icon="el-icon-plus"
                        size="small" @click="handleNewClick" style="margin-right: 12px">
               新建

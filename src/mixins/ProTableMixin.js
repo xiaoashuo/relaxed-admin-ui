@@ -13,6 +13,10 @@ export default {
       type: Boolean,
       default: true
     },
+    showUserTools: {
+      type: Boolean,
+      default: true
+    },
     //  多列排序
     multiSort: {
       type: Boolean,
